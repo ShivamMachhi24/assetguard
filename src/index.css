@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-gray-100 min-h-screen font-sans antialiased bg-grid-pattern selection:bg-emerald-500/30 selection:text-emerald-400;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-charcoal/80 backdrop-blur-xl border border-charcoal-border rounded-xl shadow-2xl;
+  }
+
+  .glass-emerald {
+    @apply bg-emerald-500/5 backdrop-blur-sm border border-emerald-500/20 rounded-xl transition-all duration-300;
+  }
+
+  .glow-emerald {
+    @apply shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)];
+  }
+
+  .glow-emerald-strong {
+    @apply shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)];
+  }
+
+  .btn-emerald {
+    @apply bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed glow-emerald hover:glow-emerald-strong;
+  }
+
+  .input-ghost {
+    @apply bg-transparent border-b-2 border-charcoal-border focus:border-emerald-500 outline-none px-2 py-1 transition-all;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal-border rounded-full hover:bg-emerald-500/50 transition-colors;
+}
+
+/* Scanning Line Effect */
+.scanning-line {
+  @apply absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent blur-sm z-20 pointer-events-none;
+}
